@@ -105,7 +105,8 @@ jobs:
             --file ./docker/rpc/Dockerfile.cross . \
             --platform linux/${{ matrix.platform }} \
             --label ${{ steps.meta.outputs.labels }} \
-            --output type=image,name=${{ env.REGISTRY_IMAGE }},push-by-digest=true,name-canonical=true,push=true
+            --output type=image,name=${{ env.REGISTRY_IMAGE }},push-by-digest=true,name-canonical=true,push=true \
+            --push
 
       - name: Export digest
         run: |
